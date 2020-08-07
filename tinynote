@@ -11,5 +11,9 @@ if ARGV.length == 0
 else 
     File.open(fn,"a+"){|f| f.puts(ARGV.join(" "))}
 end 
+# Github hooks 
+`git add #{fn}`
+`git commit -m "Adding #{fn} with tinynote"`
+`git push -u origin master`
 
 puts "Done, file is #{fn} :)"
