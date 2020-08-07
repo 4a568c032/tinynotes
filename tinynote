@@ -1,0 +1,15 @@
+# Tiny note 
+a = Time.now 
+fn = "output.#{a.to_s.gsub(/ |:/,"_")}"
+if ARGV.length == 0
+    puts "You have 20 seconds to write a note." 
+    puts "Last line will hold timer until you hit return."
+    until Time.now > a + 20
+        gets.chomp
+        File.open(fn,"a+"){|f| f.puts($_)}
+    end
+else 
+    File.open(fn,"a+"){|f| f.puts(ARGV.join(" "))}
+end 
+
+puts "Done, file is #{fn} :)"
