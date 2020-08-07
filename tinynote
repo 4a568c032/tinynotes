@@ -1,4 +1,12 @@
+# 
 # Tiny note 
+#
+# @note Run from zsh/bash as 'ruby tinynote [args]' 
+# @note [args] can be a full sentence which will be immediately written to disk.
+# @note If no sentence is added as an argument the 20 second loop input mode 
+#   will be active; after 20 sec + last carriage return
+#   file is pushed added to git repo and committed locally; this version is also
+#   directly pushing to origin master - comment line 25 to remove.
 a = Time.now 
 fn = "output.#{a.to_s.gsub(/ |:/,"_")}"
 if ARGV.length == 0
