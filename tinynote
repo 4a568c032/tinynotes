@@ -6,6 +6,7 @@
 #   will be active; after 20 sec + last carriage return
 #   file is pushed added to git repo and committed locally; this version is also
 #   directly pushing to origin master - comment line 25 to remove.
+# @note You will need to create a git repo in your working directory.
 a = Time.now 
 fn = "output.#{a.to_s.gsub(/ |:/,"_")}"
 if ARGV.length == 0
